@@ -39,7 +39,7 @@ Represents a hotel property managed by a user.
 | Column | Type | Constraints | Description |
 |--------|------|-------------|-------------|
 | `id` | UUID | PK, Default: UUIDV4 | Unique identifier |
-| `user_id` | FK -> Users | Owner of the hotel |
+| `user_id` | UUID | FK -> Users | Owner of the hotel |
 | `name_en` | VARCHAR | Not Null | Hotel name in English |
 | `name_ar` | VARCHAR | Nullable | Hotel name in Arabic |
 | `address` | TEXT | Nullable | Physical address |

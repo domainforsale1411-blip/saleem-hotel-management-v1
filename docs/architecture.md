@@ -26,7 +26,6 @@ graph TD
         Chat -->|Inference| OpenAI[OpenAI GPT-4]
         API -->|Email| SMTP[SMTP Service]
     end
-end
 ```
 
 ## Directory Structure & Responsibilities
