@@ -4,7 +4,7 @@ import { useTranslation } from 'react-i18next';
 
 import Register from './pages/Register';
 import Dashboard from './pages/Dashboard';
-import ChatAssistant from './components/ChatAssistant';
+import ChatWidget from './components/ChatWidget';
 
 // Placeholder components
 const Home = () => <h1>Home Page</h1>;
@@ -27,7 +27,7 @@ function App() {
         <Route path="/dashboard/*" element={<Dashboard />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
-      <ChatAssistant />
+      <ChatWidget />
     </div>
   );
 }
