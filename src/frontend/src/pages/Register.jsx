@@ -111,24 +111,20 @@ const Register = () => {
           </div>
         </div>
 
-        <button type="submit" style={{ 
-          padding: '0.75rem', 
-          backgroundColor: '#1a73e8', 
-          color: 'white', 
-          border: 'none', 
-          borderRadius: '4px',
-          cursor: 'pointer',
-          marginTop: '1rem'
-        }}>
+        <button 
+          type="submit" 
+          style={{ 
+            padding: '0.75rem', 
+            backgroundColor: '#1a73e8', 
+            color: 'white', 
+            border: 'none', 
+            cursor: 'pointer',
+            marginTop: '1rem'
+          }}
+        >
           {t('registerButton')}
         </button>
       </form>
-
-      <div style={{ marginTop: '1rem' }}>
-        <button onClick={() => i18n.changeLanguage(i18n.language === 'en' ? 'ar' : 'en')}>
-          {i18n.language === 'en' ? 'Switch to Arabic' : 'التحويل للإنجليزية'}
-        </button>
-      </div>
     </div>
   );
 };

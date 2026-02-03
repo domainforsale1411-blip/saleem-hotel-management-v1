@@ -103,8 +103,8 @@ const ChatAssistant = () => {
 
           {/* Input */}
           <div style={{
-            padding: '12px',
-            borderTop: '1px solid #dadce0',
+            padding: '16px',
+            borderTop: '1px solid #eee',
             display: 'flex',
             gap: '8px'
           }}>
@@ -113,28 +113,27 @@ const ChatAssistant = () => {
               value={inputText}
               onChange={(e) => setInputText(e.target.value)}
               onKeyPress={(e) => e.key === 'Enter' && handleSend()}
-              placeholder="Type your message..."
+              placeholder="Type a message..."
               style={{
                 flex: 1,
-                padding: '8px',
+                padding: '8px 12px',
                 borderRadius: '20px',
-                border: '1px solid #dadce0',
+                border: '1px solid #ddd',
                 outline: 'none'
               }}
             />
-            <button 
+            <button
               onClick={handleSend}
               style={{
                 backgroundColor: '#1a73e8',
                 color: 'white',
                 border: 'none',
-                borderRadius: '50%',
-                width: '36px',
-                height: '36px',
+                borderRadius: '20px',
+                padding: '8px 16px',
                 cursor: 'pointer'
               }}
             >
-              ➤
+              Send
             </button>
           </div>
         </div>
