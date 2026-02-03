@@ -1,0 +1,55 @@
+version: '3.8'
+
+services:
+  postgres:
+    image: postgres:15-alpine
+    container_name: saleem_postgres
+    environment:
+      POSTGRES_USER: ${DB_USER:-postgres}
+      POSTGRES_PASSWORD: ${DB_PASSWORD:-postgres}
+      POSTGRES_DB: ${DB_NAME:-saleem_hotel}
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    networks:
+      - saleem-network
+
+  redis:
+    image: redis:alpine
+    container_name: saleem_redis
+    ports:
+      - "6379:6379"
+    networks:
+      - saleem-network
+
+  backend:
+    build: ./src/backend
+    container_name: saleem_backend
+    env_file:
+      - ./src/backend/.env.staging
+    depends_on:
+      - postgres
+      - redis
+    networks:
+      - saleem-network
+
+  nginx:
+    image: nginx:alpine
+    container_name: saleem_nginx
+    ports:
+      - "80:80"
+    volumes:
+      - ./src/frontend/dist:/usr/share/nginx/html
+      - ./nginx/default.conf:/etc/nginx/conf.d/default.conf
+    depends_on:
+      - backend
+    networks:
+      - saleem-network
+
+networks:
+  saleem-network:
+    driver: bridge
+
+volumes:
+  postgres_data:
