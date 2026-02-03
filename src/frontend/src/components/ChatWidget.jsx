@@ -98,15 +98,15 @@ const ChatWidget = () => {
                   </Paper>
                 </ListItem>
               )}
-               <div ref={messagesEndRef} />
             </List>
           </Box>
 
-          <Box sx={{ p: 2, bgcolor: 'white', display: 'flex', gap: 1 }}>
+          <Box sx={{ p: 2, bgcolor: 'white', display: 'flex' }}>
             <TextField
               fullWidth
+              variant="outlined"
               size="small"
-              placeholder={t('typeMessage') || "Type a message..."}
+              placeholder={t('typeMessage') || 'Type a message...'}
               value={message}
               onChange={(e) => setMessage(e.target.value)}
               onKeyPress={handleKeyPress}
